@@ -1,27 +1,64 @@
-import java.util.Date;
+import interfaces.*;
+
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
-        task1();
-
-        Days test = (x,y) -> {
-            return getDifferenceDays(x,y);
-        };
+//        task1();
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter date1 : ");
-        Date date1 = new Date(in.nextInt());
-        System.out.println("Enter date2 : ");
 
-        String res = test.days();
-        System.out.println(res);
-
+//        sum(in);
+//        sub(in);
+//        mult(in);
+        div(in);
     }
 
-    public static long getDifferenceDays(Date d1, Date d2) {
-        long diff = d2.getTime() - d1.getTime();
-        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+    public static void div(Scanner in) {
+        DivFraction test = (x, y) -> {
+            return x / y;
+        };
+        System.out.print("Enter num1 : ");
+        double num1 = in.nextDouble();
+        System.out.print("Enter num2 : ");
+        double num2 = in.nextDouble();
+        double res = test.div(num1, num2);
+        System.out.println("Result: " + res);
+    }
+
+    public static void sum(Scanner in) {
+        SumFraction test = (x, y) -> {
+            return x + y;
+        };
+        System.out.print("Enter num1 : ");
+        double num1 = in.nextDouble();
+        System.out.print("Enter num2 : ");
+        double num2 = in.nextDouble();
+        double res = test.sum(num1, num2);
+        System.out.println("Result: " + res);
+    }
+
+    public static void mult(Scanner in) {
+        MultFraction test = (x, y) -> {
+            return x * y;
+        };
+        System.out.print("Enter num1 : ");
+        double num1 = in.nextDouble();
+        System.out.print("Enter num2 : ");
+        double num2 = in.nextDouble();
+        double res = test.mult(num1, num2);
+        System.out.println("Result: " + res);
+    }
+
+    public static void sub(Scanner in) {
+        SubFraction test = (x, y) -> {
+            return x - y;
+        };
+        System.out.print("Enter num1 : ");
+        double num1 = in.nextDouble();
+        System.out.print("Enter num2 : ");
+        double num2 = in.nextDouble();
+        double res = test.sub(num1, num2);
+        System.out.println("Result: " + res);
     }
 
     public static void task1() {
